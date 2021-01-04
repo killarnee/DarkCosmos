@@ -35,15 +35,6 @@ class SkinDarkCosmos extends SkinTemplate {
         ] );
 
         // Basic IE support without flexbox
-        $out->addStyle( $this->stylename . '/resources/IE9fixes.css', 'screen', 'IE' );
-    }
-
-    /**
-     * Add CSS via ResourceLoader
-     *
-     * @param OutputPage $out
-     */
-    public function setupSkinUserCss( OutputPage $out ) {
-        parent::setupSkinUserCss( $out );
+        //$out->addStyle( $this->stylename . '/resources/IE9fixes.css', 'screen', 'IE' );
     }
 }
