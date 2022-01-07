@@ -273,7 +273,7 @@ class DarkCosmosTemplate extends BaseTemplate {
             Html::rawElement( 'h3', $labelOptions, $msgString ) .
             Html::rawElement( 'div', $bodyDivOptions,
                 $contentText .
-                $this->getAfterPortlet( $name )
+                $this->getSkin()->getAfterPortlet( $name )
             )
         );
 
@@ -565,7 +565,7 @@ class DarkCosmosTemplate extends BaseTemplate {
         }
 
         // Labels
-        if ( $user->isLoggedIn() ) {
+        if ( $user->isRegistered() ) {
             $dropdownHeader = $userName;
             $headerMsg = [ 'darkcosmos-loggedinas', $userName ];
         } else {
