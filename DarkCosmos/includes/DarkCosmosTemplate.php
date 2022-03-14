@@ -273,7 +273,7 @@ class DarkCosmosTemplate extends BaseTemplate {
             Html::rawElement( 'h3', $labelOptions, $msgString ) .
             Html::rawElement( 'div', $bodyDivOptions,
                 $contentText .
-                $this->getAfterPortlet( $name )
+                $this->getSkin()->getAfterPortlet( $name )
             )
         );
 
@@ -318,7 +318,7 @@ class DarkCosmosTemplate extends BaseTemplate {
         $html .= Html::rawElement(
             'div',
             [
-                'id' => Sanitizer::escapeId( $id ),
+                'id' => Sanitizer::escapeIdForAttribute( $id ),
                 'class' => array_merge( [ 'sidebar-chunk' ], $classes )
             ],
             Html::rawElement( 'h2', [],
@@ -348,7 +348,7 @@ class DarkCosmosTemplate extends BaseTemplate {
         $html .= Html::openElement(
             'div',
             [
-                'id' => Sanitizer::escapeId( $id ),
+                'id' => Sanitizer::escapeIdForAttribute( $id ),
                 'class' => 'mw-portlet',
                 'role' => 'banner'
             ]
@@ -565,7 +565,7 @@ class DarkCosmosTemplate extends BaseTemplate {
         }
 
         // Labels
-        if ( $user->isLoggedIn() ) {
+        if ( $user->isRegistered() ) {
             $dropdownHeader = $userName;
             $headerMsg = [ 'darkcosmos-loggedinas', $userName ];
         } else {
@@ -709,7 +709,7 @@ class DarkCosmosTemplate extends BaseTemplate {
         }
 
         // Tools that may be general or page-related (typically the toolbox)
-        $pileOfTools = $this->getToolbox();
+        $pileOfTools = $this->get('sidebar')['TOOLBOX'];
         if ( $namespace >= 0 ) {
             $pileOfTools['pagelog'] = [
                 'text' => $this->getMsg( 'darkcosmos-pagelog' )->text(),

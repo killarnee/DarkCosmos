@@ -3,6 +3,9 @@
 // for things that are basically the same thing repeated, which should use
 // a shared class instead.
 
+.background-image-svg(@svg, @fallback) {
+	background-image: url(@svg);
+}
 // To hide objects, but keep them accessible for screen-readers
 .hidden() {
 	position: absolute;

@@ -8,7 +8,7 @@
     "license-name": "GPL-2.0-or-later",
     "type": "skin",
     "requires": {
-        "MediaWiki": ">= 1.34.0"
+        "MediaWiki": ">= 1.35.0"
     },
     "ValidSkinNames": {
         "darkcosmos": "DarkCosmos"
@@ -63,9 +63,6 @@
             "targets": [ "desktop" ],
             "scripts": [
                 "resources/main.js"
-            ],
-            "dependencies": [
-                "jquery.tabIndex"
             ]
         },
         "skins.darkcosmos.mobile": {
